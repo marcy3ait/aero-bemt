@@ -1,7 +1,11 @@
 # BEMT
 
+## Index:
+- Detalhes da implementação: [Implementação](https://github.com/marcy3ait/ProjetoFinal/blob/master/Implementa%C3%A7%C3%A3o.md)
+- Detalhes de uso: [Tutoriais](https://github.com/marcy3ait/ProjetoFinal/blob/master/tutoriais.ipynb)
+
 ## Introdução: 
-Implementação númerica da teoria BEMT, Blade Element Momentum Theory, para rotores  verticais de hélicopteros em voo pairado. Para ver detalhes de uso do modulo veja os tutoriais. [Tutoriais](https://github.com/marcy3ait/ProjetoFinal/blob/master/tutoriais.ipynb)
+Implementação númerica da teoria BEMT, Blade Element Momentum Theory, para rotores  verticais de hélicopteros em voo pairado. Para ver detalhes de uso do modulo veja os tutoriais.
 
 A teoria BEMT é a combinação de duas outras teorias, a teoria da quantidade de movimento ou teoria do disco atuador e a teoria do elemento de pá (BET - Blade Element Theory).
 
@@ -26,3 +30,7 @@ A BET assume que a pá é composta de pequenos elementos bidimensionais, aerofó
 
 ## Referencias:
 [LEISHMAN2000]	Leishman, J.G. 2000. Principles of Helicopter Aerodynamics. Cambridge University Press.
+
+
+
+#### <center> Triplex Aviation Corp. </center>
