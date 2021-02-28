@@ -49,6 +49,9 @@ class Rotor:
         self.d2 = d2
 
     def setAfilamento(self, gamma):
+        '''
+        Definindo o parametro de afilamento
+        '''
 
         self.gamma = gamma
 
@@ -129,7 +132,7 @@ class Bemt:
         
         i = 0
 
-        while (i<5):
+        while (i<10):
 
             Ct = 0.0
 
@@ -248,7 +251,7 @@ class Bemt:
         #obter a figura de merito e fator de pDotencia induzida
 
 
-'''
+
 
 if __name__ == "__main__":
     theta_dis = [-10]
@@ -278,15 +281,11 @@ if __name__ == "__main__":
     radim = np.array(radim, dtype=float)
 
     plt.figure('Coeficiente de sustentação')
-    plt.plot(simula.r_adim, cl1, label = '$\gamma$ = 1')
-    plt.plot(simula.r_adim, cl2, label = '$\gamma$ = 2')
-    plt.plot(simula.r_adim, cl3, label = '$\gamma$ = 3')
+    plt.plot(simula.r_adim, cl1, label = r'$\gamma$ = 1')
+    plt.plot(simula.r_adim, cl2, label = r'$\gamma$ = 2')
+    plt.plot(simula.r_adim, cl3, label = r'$\gamma$ = 3')
     plt.xlabel('Raio adimensional')
     plt.ylabel(r'$C_l$')
     plt.legend()
     plt.grid()
     
-
-
-# %%
-'''

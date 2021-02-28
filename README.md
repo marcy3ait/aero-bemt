@@ -11,7 +11,7 @@ A BET assume que a pá é composta de pequenos elementos bidimensionais, aerofó
 
 ## Características da implementação:
 - Correção de ponta de pá (Modelo de Prandtl);
-- Afilamento da pá;
+- Afilamento da pá (Podenrado pela tração);
 - Polar de arrasto parabolica;
 - Torção linear da pá;
 
