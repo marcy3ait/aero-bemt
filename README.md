@@ -30,7 +30,3 @@ A BET assume que a pá é composta de pequenos elementos bidimensionais, aerofó
 
 ## Referencias:
 [LEISHMAN2000]	Leishman, J.G. 2000. Principles of Helicopter Aerodynamics. Cambridge University Press.
-
-
-
-#### <center> Triplex Aviation Corp. </center>
