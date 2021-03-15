@@ -11,7 +11,7 @@ A teoria BEMT é a combinação de duas outras teorias, a teoria da quantidade d
 
 A teoria da quantidade de movimento modelo o rotor com um disco atuador (um rotor com número infinito de pás) com espessura despressível que suporta a diferença de pressão que gera a sustentação, sem agregar ao modelo caracteristicas de projeto da hélice. Contudo, essa simples teoria fornece alguns parametros de desempenho do rotor baseando-se na leis de conservação de momento do fluido em um volume de controle que engloba o rotor. 
 
-A BET assume que a pá é composta de pequenos elementos bidimensionais, aerofólios, que são submetidos ao escoamento de forma a gerar forças e momentos que são integradas na pá para compor as forças globais. 
+A BET assume que a pá é composta de pequenos elementos bidimensionais, aerofólios, que são submetidos ao escoamento de forma a gerar forças e momentos que são integradas na pá para compor as forças globais. Para mais detalhes da implementação consultar [reláorio final ](C:\Users\marcy\Desktop\BEMT\aero-bemt\Relatorio_aerodinamica_helicopteros.pdf).
 
 ## Características da implementação: 
 

@@ -11,10 +11,11 @@ Classe onde são definida as caracteristicas do rotor.
 
 
 
-### Parâmetros: 
-Parâmetros que definem o rotor, para mais detalhes sobre como definir o rotor ver o tutorial.
+### Parâmetros      [Tipo de dado] [unidade] [default]
+
+Parâmetros que definem o rotor, para mais detalhes sobre como definir o rotor ver [Tutoriais.](https://github.com/marcy3ait/ProjetoFinal/blob/master/tutoriais.ipynb)
       
-#### Parâmetros obrigatorios [Tipo de dado] [unidade] [default]
+#### Parâmetros obrigatorios 
     cla: Inclinação da curva cl X aoa [double] [1/rad]
     solidEqui: Solidez equivalente do rotor [double] 
     gamma: Razão de afilamento (gamma:1) [double] [default gamma = 1]
@@ -30,7 +31,6 @@ Parâmetros que definem o rotor, para mais detalhes sobre como definir o rotor v
     d1: Parametro de arrasto d1*aoa [double] [default d1 = 0]
     d2: Parametro de arrasto d2*aoa² [double] [default d2 = 0]
         
-
 
 ## Bemt
 
@@ -59,15 +59,3 @@ Lista completa dos output das simulação.
     cp: Coeficiente de potência total.
     Fmerit: Figura de mérito (razão entre potecia ideal e potencia total).
 
-### Exemplo (ver tutorial)
-    # Definindo rotor
-    rotorTeste = Rotor(cla = 5.9, ctreq = Ctreq, solidEqui = 0.1, numberBlades = 2, twist = theta_dis )
-    # Definindo parametros de arrasto
-    rotorTeste.setArrato(cd0 = 0.01, d1 = 0.025 , d2 = 0.65)
-    # Definindo parametro de afilamento
-    rotorTeste.setAfilamento(gamma = 2)
-
-    # Definindo simulação
-    simula = Bemt( rotorTeste, correcao = True)
-    # output
-    dct_dr, dcq_dr, vel_ind, cl, k, cp, Fmerit = simula.solver()
