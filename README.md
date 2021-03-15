@@ -19,6 +19,7 @@ A BET assume que a pá é composta de pequenos elementos bidimensionais, aerofó
 - Afilamento da pá (Poderado pela tração);
 - Polar de arrasto parabolica;
 - Torção linear da pá;
+- Torção ideal.
 
 
 ## limitações:
