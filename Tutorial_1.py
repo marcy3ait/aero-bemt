@@ -10,11 +10,11 @@
 #
 # c) Quatro pás com correção de ponta de pá
 #
-# Dados: $\sigma = 0.1$, $ C_t $ variando de 0.002 a 0.009, $C_{l\alpha}$ = 5.9, $\theta_{tw}$ = 0
+# Dados: $\sigma = 0.1$, $ C_{treq} $ variando de 0.002 a 0.009, $C_{l\alpha}$ = 5.9, $\theta_{tw}$ = 0
 
 
 #%%
-import BladeElementMoment as bem
+import aerobemt as bem
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -46,7 +46,7 @@ plt.grid()
 # Plotar o gráfico de coeficiente sustentação pelo raio adimensiona e velocidade induzida pelo raio adimensional.
 # Com correção de Prandtl.
 #
-# Dados: $\sigma = 0.1$, $ C_t $ = 0.008, $C_{l\alpha}$ = 5.9, $\theta_{tw}$ = \[0°, -5°, -10°, -15°, -20°, -25°] , numberBlade = 4, $C_{D0}$ = 0.01,
+# Dados: $\sigma = 0.1$, $ C_{treq} $ = 0.008, $C_{l\alpha}$ = 5.9, $\theta_{tw}$ = \[0°, -5°, -10°, -15°, -20°, -25°] , $N_b$ = 4, $C_{D0}$ = 0.01,
 #%%
 ## definição das configurações do roto
 
@@ -87,7 +87,7 @@ ax2.legend()
 # Plotar o gráfico de coeficiente sustentação pelo raio adimensiona e gradiente do coeficiente de tração pelo raio adimensional.
 # Com correção de Prandtl.
 #
-# Dados: $\sigma = 0.1$, $ C_t $ = 0.008, $C_{l\alpha}$ = 5.9, $\theta_{tw}$ = -10° , numberBlade = 2, $C_{D0}$ = 0.01, $D_1$ = 0.025, $D_2$ = 0.65, $\gamma$  = 1, 2, 3. 
+# Dados: $\sigma = 0.1$, $ C_{treq} $ = 0.008, $C_{l\alpha}$ = 5.9, $\theta_{tw}$ = -10° , $N_b$ = 2, $C_{D0}$ = 0.01, $D_1$ = 0.025, $D_2$ = 0.65, $\gamma$  = 1, 2, 3. 
 #%%
 
 fig3, ax3 = plt.subplots()

@@ -58,7 +58,7 @@ class Rotor:
 
 class Bemt:
 
-    def __init__(self, rotor, correcao = False, elementosPa = 100):
+    def __init__(self, rotor, correcao = False, twistIdeal = False, elementosPa = 100):
 
         self.rotor = rotor
         self.correcao = correcao
@@ -71,6 +71,7 @@ class Bemt:
             r_adim.append(rb[i]+self.dr/2)
         r_adim = np.array(r_adim, dtype=float)
         self.r_adim = r_adim
+        self.twistIdeal = twistIdeal
     
     # gradientes
     def _dCt_dr(self, solid, theta, rn, velInduzida):
@@ -132,7 +133,7 @@ class Bemt:
         
         i = 0
 
-        while (i<10):
+        while (i<5):
 
             Ct = 0.0
 
@@ -145,6 +146,8 @@ class Bemt:
                 theta = theta_0 + R_elem*twist
 
                 if( theta<0 ): 
+                    theta = []
+                    velInd = []
                     Converge = False
                     break
 
@@ -190,22 +193,31 @@ class Bemt:
     def solver(self):
         
         
-        k      = np.zeros( (len(self.rotor.ctreq) ))
-        cp     = np.zeros( (len(self.rotor.ctreq) ))
-        Fmerit = np.zeros( (len(self.rotor.ctreq) ))
-        vel_ind= np.zeros( (len(self.rotor.ctreq), len(self.r_adim)) ) #linha, coluna
+        k       =  np.zeros( (len(self.rotor.ctreq) ))
+        cp      =  np.zeros( (len(self.rotor.ctreq) ))
+        Fmerit  =  np.zeros( (len(self.rotor.ctreq) ))
+        vel_ind =  np.zeros( (len(self.rotor.ctreq), len(self.r_adim)) ) #linha, coluna
 
         for i in range(len(self.rotor.ctreq)):
 
-            
-            
-            Converge, theta_0, vel_induzida = self._BEMT( self.rotor.ctreq[i], self.rotor.twist)
-            vel_ind[i][:] = vel_induzida 
+            if(self.twistIdeal == False):
 
-            if(Converge == False):
-                print(f'Não para converge: ct = {self.rotor.ctreq[i]}, theta_disp = {self.rotor.twist*180/np.pi}')
-                break
+                Converge, theta_0, vel_induzida = self._BEMT( self.rotor.ctreq[i], self.rotor.twist)
 
+                if(Converge == False):
+
+                    print(f'Não converge para : ct = {self.rotor.ctreq[i]}, theta_disp = {self.rotor.twist*180/np.pi}')
+                    continue
+                vel_ind[i][:] = vel_induzida 
+
+            else: # torção ideal
+                
+                theta_tip = 4*self.rotor.ctreq[i]/(self.rotor.solidEqui*self.rotor.cla) + np.sqrt(self.rotor.ctreq[i]/2)
+                vel_induzida = np.sqrt(self.rotor.ctreq[i]/2)*np.ones(len(self.r_adim))
+                vel_ind[i][:] = vel_induzida
+
+
+            
             # calculo dos parametros de desempenho 
             
             dct_dr = []
@@ -218,9 +230,13 @@ class Bemt:
 
             for index, rn in enumerate(self.r_adim):
 
-                
-                solid = self._solidLocal(rn)
-                theta = theta_0 + rn*self.rotor.twist
+                if(self.twistIdeal == False):
+                    solid = self._solidLocal(rn)
+                    theta = theta_0 + rn*self.rotor.twist
+                else: 
+                    solid = self.rotor.solidEqui
+                    theta = theta_tip/rn
+
 
                 
                 dcp0.append(self._dCp0_dr( solid, theta, rn, vel_induzida[index])*self.dr)
@@ -240,8 +256,8 @@ class Bemt:
 
             #print(theta_dis[j],sum(dcpi_dr))
             cp[i] = sum(dcp)
-            cpi      = sum(dcpi)
-            cp0      = sum(dcp0)
+            cpi   = sum(dcpi)
+            cp0   = sum(dcp0)
             # k = cpinduzida(considerando efeitos 3d)/ cpideal
             k[i]      = cpi/(self.rotor.ctreq[i]**(3/2)/np.sqrt(2))
             Fmerit[i] = (self.rotor.ctreq[i]**(3/2)/np.sqrt(2))/(k[i]*(self.rotor.ctreq[i]**(3/2)/np.sqrt(2))+cp0) 
@@ -288,4 +304,4 @@ if __name__ == "__main__":
     plt.ylabel(r'$C_l$')
     plt.legend()
     plt.grid()
-    
+    plt.show()
