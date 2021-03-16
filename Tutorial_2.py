@@ -32,6 +32,8 @@ for i in twist:
     simulacao = bem.Bemt(rotor1, correcao=True)
     __, __, __, __, K , __, Fmerit = simulacao.solver()
     plt.plot(ctreq[K != 0], K[ K != 0], label = f'twist = {i} [°]')
-
+plt.xlabel('$C_t$')
+plt.ylabel('FM')
+plt.grid()
 plt.show()
 # %%

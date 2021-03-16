@@ -2,7 +2,7 @@
 # # Tutoriais
 # ## Atividade 04
 #
-# Plotar o gráfico de coeficiente de tração por fator de potencia induzida para seguintes confirações
+# Plotar o gráfico de coeficiente de tração por fator de potencia induzida para seguintes condições:
 #
 # a) Duas pás sem correção de ponta de pá
 #
@@ -43,7 +43,7 @@ plt.grid()
 #%% [markdown]
 # ## Atividade 05
 #
-# Plotar o gráfico de coeficiente sustentação pelo raio adimensiona e velocidade induzida pelo raio adimensional.
+# Plotar o gráfico de coeficiente sustentação pelo raio adimensional e velocidade induzida pelo raio adimensional.
 # Com correção de Prandtl.
 #
 # Dados: $\sigma = 0.1$, $ C_{treq} $ = 0.008, $C_{l\alpha}$ = 5.9, $\theta_{tw}$ = \[0°, -5°, -10°, -15°, -20°, -25°] , $N_b$ = 4, $C_{D0}$ = 0.01,
