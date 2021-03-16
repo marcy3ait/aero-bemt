@@ -2,7 +2,7 @@
 
 ## Index:
 - Detalhes da implementação: [Implementação](https://github.com/marcy3ait/ProjetoFinal/blob/master/Implementa%C3%A7%C3%A3o.md)
-- Detalhes de uso: [Tutoriais](https://github.com/marcy3ait/ProjetoFinal/blob/master/tutoriais.ipynb)
+- Detalhes de uso: [Tutoriais](https://github.com/marcy3ait/aero-bemt/blob/master/Tutorial_1.ipynb)
 
 ## Introdução: 
 Implementação númerica da teoria BEMT, Blade Element Momentum Theory, para rotores  verticais de hélicopteros em voo pairado. Para ver detalhes de uso do modulo veja os tutoriais.
